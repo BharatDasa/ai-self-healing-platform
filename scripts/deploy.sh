@@ -12,6 +12,9 @@ kubectl apply -f k8s/keda/
 
 kubectl apply -f k8s/argo-rollouts/
 
+# Deploy Airflow
+kubectl apply -f ml-pipelines/airflow/apps/
+
 echo "⏳ Waiting for deployments..."
 kubectl argo rollouts get rollout fraud-detection -n ai-platform
 kubectl rollout status deploy/self-healing -n ai-platform
